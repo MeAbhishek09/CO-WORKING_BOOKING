@@ -1,26 +1,15 @@
-'use client';
-
-import { useEffect, useState } from 'react';
+import { useState } from "react";
 
 export function useAuth() {
   const [user, setUser] = useState(null);
-  const [role, setRole] = useState(null);
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    // 🔧 MOCK DATA (frontend-only)
-    const mockUser = {
-      id: 1,
-      name: 'Test User',
-      email: 'test@example.com'
-    };
+  const login = (userData) => {
+    setUser(userData);
+  };
 
-    const mockRole = 'admin'; // 'user' | 'admin' | 'owner'
+  const logout = () => {
+    setUser(null);
+  };
 
-    setUser(mockUser);
-    setRole(mockRole);
-    setLoading(false);
-  }, []);
-
-  return { user, role, loading };
+  return { user, login, logout };
 }

@@ -1,0 +1,20 @@
+[
+  {
+    "id": 101,
+    "resource": "Seat A1",
+    "type": "SEAT",
+    "startDate": "2026-01-01",
+    "endDate": "2026-01-31",
+    "status": "ACTIVE",
+    "amount": 6000
+  },
+  {
+    "id": 88,
+    "resource": "Pod P2",
+    "type": "POD",
+    "startDate": "2025-12-01",
+    "endDate": "2025-12-10",
+    "status": "COMPLETED",
+    "amount": 7000
+  }
+]

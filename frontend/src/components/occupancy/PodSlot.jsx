@@ -1,3 +1,5 @@
+// path: frontend/src/components/occupancy/PodSlot.jsx
+
 export default function PodSlot({ slot, onClick }) {
   const styles = {
     available: 'bg-green-100 border-green-400 text-green-800',

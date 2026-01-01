@@ -1,3 +1,4 @@
+// path: frontend/src/components/occupancy/PodsGrid.jsx
 import PodCard from './PodCard';
 import { pods } from '@/mock/pods';
 

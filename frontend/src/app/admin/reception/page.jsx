@@ -2,15 +2,10 @@
 
 import SeatGrid from '@/components/occupancy/SeatGrid';
 import { seats } from '@/mock/occupancy';
-
 import { useState } from 'react';
-
 import SeatActionModal from '@/components/occupancy/SeatActionModal';
-
 import FilterBar from '@/components/occupancy/FilterBar';
 import PodsGrid from '@/components/occupancy/PodsGrid';
-
-
 
 export default function AdminDashboard() {
 

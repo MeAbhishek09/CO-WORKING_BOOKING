@@ -410,15 +410,7 @@ function AdminDashboard() {
     const [slot, setSlot] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('morning');
     const [mode, setMode] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('morning'); // morning | evening | full-day | hourly
     const filteredSeats = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$mock$2f$occupancy$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["seats"].map((seat)=>{
-        // Hourly mode → seats are blocked
-        if (mode === 'hourly') {
-            return {
-                ...seat,
-                status: 'occupied'
-            };
-        }
-        // Slot-based filtering
-        if (mode !== 'full-day' && !seat.slots.includes(mode)) {
+        if (mode !== 'full-day' && mode !== 'hourly' && !seat.slots.includes(mode)) {
             return {
                 ...seat,
                 status: 'occupied'
@@ -436,7 +428,7 @@ function AdminDashboard() {
                     children: "Seat Occupancy"
                 }, void 0, false, {
                     fileName: "[project]/src/app/admin/reception/page.jsx",
-                    lineNumber: 46,
+                    lineNumber: 38,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -447,7 +439,7 @@ function AdminDashboard() {
                             label: "Available"
                         }, void 0, false, {
                             fileName: "[project]/src/app/admin/reception/page.jsx",
-                            lineNumber: 52,
+                            lineNumber: 44,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Legend, {
@@ -455,7 +447,7 @@ function AdminDashboard() {
                             label: "Reserved"
                         }, void 0, false, {
                             fileName: "[project]/src/app/admin/reception/page.jsx",
-                            lineNumber: 53,
+                            lineNumber: 45,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Legend, {
@@ -463,13 +455,13 @@ function AdminDashboard() {
                             label: "Occupied"
                         }, void 0, false, {
                             fileName: "[project]/src/app/admin/reception/page.jsx",
-                            lineNumber: 54,
+                            lineNumber: 46,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/admin/reception/page.jsx",
-                    lineNumber: 51,
+                    lineNumber: 43,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$occupancy$2f$FilterBar$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -479,7 +471,7 @@ function AdminDashboard() {
                     setMode: setMode
                 }, void 0, false, {
                     fileName: "[project]/src/app/admin/reception/page.jsx",
-                    lineNumber: 58,
+                    lineNumber: 50,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -492,7 +484,7 @@ function AdminDashboard() {
                             children: date
                         }, void 0, false, {
                             fileName: "[project]/src/app/admin/reception/page.jsx",
-                            lineNumber: 67,
+                            lineNumber: 59,
                             columnNumber: 13
                         }, this),
                         " ·",
@@ -502,13 +494,13 @@ function AdminDashboard() {
                             children: mode === 'hourly' ? 'Hourly Pods' : mode.replace('-', ' ')
                         }, void 0, false, {
                             fileName: "[project]/src/app/admin/reception/page.jsx",
-                            lineNumber: 68,
+                            lineNumber: 60,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/admin/reception/page.jsx",
-                    lineNumber: 65,
+                    lineNumber: 57,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$occupancy$2f$SeatGrid$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -516,26 +508,27 @@ function AdminDashboard() {
                     onSeatClick: (seat)=>setSelectedSeat(seat)
                 }, void 0, false, {
                     fileName: "[project]/src/app/admin/reception/page.jsx",
-                    lineNumber: 76,
-                    columnNumber: 9
+                    lineNumber: 68,
+                    columnNumber: 8
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$occupancy$2f$SeatActionModal$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                     seat: selectedSeat,
+                    mode: mode,
                     onClose: ()=>setSelectedSeat(null)
                 }, void 0, false, {
                     fileName: "[project]/src/app/admin/reception/page.jsx",
-                    lineNumber: 83,
+                    lineNumber: 78,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/admin/reception/page.jsx",
-            lineNumber: 44,
+            lineNumber: 36,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/admin/reception/page.jsx",
-        lineNumber: 42,
+        lineNumber: 34,
         columnNumber: 5
     }, this);
 }
@@ -547,7 +540,7 @@ function Legend({ color, label }) {
                 className: `w-4 h-4 rounded-full ${color}`
             }, void 0, false, {
                 fileName: "[project]/src/app/admin/reception/page.jsx",
-                lineNumber: 96,
+                lineNumber: 93,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -555,13 +548,13 @@ function Legend({ color, label }) {
                 children: label
             }, void 0, false, {
                 fileName: "[project]/src/app/admin/reception/page.jsx",
-                lineNumber: 97,
+                lineNumber: 94,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/admin/reception/page.jsx",
-        lineNumber: 95,
+        lineNumber: 92,
         columnNumber: 5
     }, this);
 }

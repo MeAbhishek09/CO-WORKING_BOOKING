@@ -4,7 +4,8 @@ export const seats = [
     label: `A${i + 1}`,
     row: 'A',
     status: i % 3 === 0 ? 'occupied' : i % 3 === 1 ? 'reserved' : 'available',
-    slots: ['morning', 'evening'] // available in both
+    slots: ['morning', 'evening'],
+    blockedHours: [10, 11] // ❗ new (10–11, 11–12 unavailable)
   })),
 
   ...Array.from({ length: 10 }, (_, i) => ({
@@ -12,7 +13,8 @@ export const seats = [
     label: `B${i + 1}`,
     row: 'B',
     status: i % 2 === 0 ? 'available' : 'occupied',
-    slots: ['morning'] // morning only
+    slots: ['morning'],
+    blockedHours: i % 2 === 0 ? [] : [9, 14]
   })),
 
   ...Array.from({ length: 10 }, (_, i) => ({
@@ -20,6 +22,7 @@ export const seats = [
     label: `C${i + 1}`,
     row: 'C',
     status: 'available',
-    slots: ['evening'] // evening only
+    slots: ['evening'],
+    blockedHours: [12] // 12–13 blocked
   }))
 ];
