@@ -1,3 +1,8 @@
 {
-  "/login/page": "app/login/page.js"
+  "/availability/page": "app/availability/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/login/page": "app/login/page.js",
+  "/owner/analytics/page": "app/owner/analytics/page.js",
+  "/page": "app/page.js",
+  "/pricing/page": "app/pricing/page.js"
 }

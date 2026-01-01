@@ -49,6 +49,7 @@ export default function AdminDashboard() {
   });
 
   return (
+    
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 flex items-center justify-center px-6">
       <div className="bg-white rounded-3xl shadow-xl p-10 w-full space-y-10">
 
