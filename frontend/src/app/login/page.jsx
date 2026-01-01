@@ -4,80 +4,84 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
 import { useAuth } from "@/hooks/useAuth";
+import { mockUsers } from "@/mock/users";
 
 export default function LoginPage() {
   const router = useRouter();
   const { login } = useAuth();
 
-  const [role, setRole] = useState("USER");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const handleLogin = () => {
-    // mock login
+    const found = mockUsers.find(
+      (u) => u.email === email && u.password === password
+    );
+
+    if (!found) {
+      setError("Invalid email or password");
+      return;
+    }
+
     login({
-      name: "Abhishek",
-      role, // USER | ADMIN | OWNER
+      name: found.name,
+      email: found.email,
+      role: found.role,
     });
 
-    if (role === "USER") router.push("/user/dashboard");
-    if (role === "ADMIN") router.push("/admin/reception");
-    if (role === "OWNER") router.push("/owner/analytics");
+    if (found.role === "USER") router.push("/user/dashboard");
+    if (found.role === "ADMIN") router.push("/admin/reception");
+    if (found.role === "OWNER") router.push("/owner/analytics");
   };
 
   return (
     <>
-      {/* Navbar */}
       <Navbar />
 
-      <div className="min-h-[70vh] flex items-center justify-center px-6">
-        <div className="w-full max-w-md border rounded-xl p-6 shadow-sm">
-          <h1 className="text-2xl font-bold mb-6 text-center">
-            Login
+      <div className="min-h-[80vh] flex items-center justify-center px-6 bg-gradient-to-br from-blue-50 to-indigo-100">
+        <div className="bg-white rounded-2xl shadow-xl p-8 w-full max-w-md">
+          <h1 className="text-2xl font-bold text-center mb-6">
+            Login to CoWork
           </h1>
 
-          {/* Email */}
-          <label className="text-sm mb-1 block">Email</label>
+          {error && (
+            <p className="mb-4 text-sm text-red-600 text-center">
+              {error}
+            </p>
+          )}
+
+          <label className="text-sm font-medium">Email</label>
           <input
             type="email"
+            className="w-full border rounded-lg px-3 py-2 mb-4"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full border rounded px-3 py-2 mb-4"
-            placeholder="you@example.com"
+            placeholder="user@cowork.com"
           />
 
-          {/* Password */}
-          <label className="text-sm mb-1 block">Password</label>
+          <label className="text-sm font-medium">Password</label>
           <input
             type="password"
+            className="w-full border rounded-lg px-3 py-2 mb-6"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full border rounded px-3 py-2 mb-4"
             placeholder="••••••••"
           />
 
-          {/* Role (temporary for dev) */}
-          <label className="text-sm mb-1 block">Login as</label>
-          <select
-            value={role}
-            onChange={(e) => setRole(e.target.value)}
-            className="w-full border rounded px-3 py-2 mb-6"
-          >
-            <option value="USER">User</option>
-            <option value="ADMIN">Admin / Reception</option>
-            <option value="OWNER">Owner</option>
-          </select>
-
           <button
             onClick={handleLogin}
-            className="w-full bg-black text-white py-2 rounded"
+            className="w-full py-2 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition"
           >
             Login
           </button>
 
-          <p className="text-xs text-gray-500 mt-4 text-center">
-            * This is a mock login. Backend auth will be added later.
-          </p>
+          {/* Demo credentials */}
+          <div className="mt-6 text-xs text-gray-600 space-y-1">
+            <p><b>User:</b> user@cowork.com / user123</p>
+            <p><b>Admin:</b> admin@cowork.com / admin123</p>
+            <p><b>Owner:</b> owner@cowork.com / owner123</p>
+          </div>
         </div>
       </div>
     </>
