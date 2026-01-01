@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/91991/Desktop/freelance/frontend/src/app/user/dashboard/page.jsx"],"sourcesContent":["export default function UserDashboard() {\r\n  return <h1 className=\"text-xl\">User Dashboard</h1>;\r\n}\r\n"],"names":[],"mappings":";;;;;;AAAe,SAAS;IACtB,qBAAO,8OAAC;QAAG,WAAU;kBAAU;;;;;;AACjC"}}]
+}

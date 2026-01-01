@@ -1,0 +1,273 @@
+[00:00:01.069] Server  LOG     ✓ Ready in 691ms
+[00:00:01.756] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:08.632] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:25.343] Server  LOG     ✓ Compiled in 441ms
+[00:00:50.451] Server  LOG     ✓ Compiled in 62ms
+[00:02:40.424] Server  LOG     ✓ Compiled in 31ms
+[00:02:51.079] Server  LOG     ✓ Compiled in 49ms
+[00:03:19.635] Server  LOG     ✓ Compiled in 27ms
+[00:03:23.415] Server  LOG     ✓ Compiled in 37ms
+[00:03:36.914] Server  LOG     ✓ Compiled in 23ms
+[00:03:39.729] Server  LOG     ✓ Compiled in 43ms
+[00:04:03.639] Server  LOG     ✓ Compiled in 22ms
+[00:04:05.865] Server  LOG     ✓ Compiled in 21ms
+[00:05:36.701] Server  LOG     ✓ Compiled in 42ms
+[00:06:05.243] Server  LOG     ✓ Compiled in 39ms
+[00:06:26.596] Server  LOG     ✓ Compiled in 23ms
+[00:06:28.491] Server  LOG     ✓ Compiled in 20ms
+[00:06:31.056] Server  ERROR   ⨯ ReferenceError: date is not defined
+[00:06:31.079] Server  LOG     ✓ Compiled in 58ms
+[00:06:31.352] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:31.662] Browser ERROR   uncaughtError: ReferenceError: date is not defined
+[00:07:18.377] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:07:18.711] Server  ERROR   ⨯ ReferenceError: date is not defined
+[00:07:18.726] Server  LOG     ✓ Compiled in 38ms
+[00:07:18.727] Browser ERROR   unhandledRejection: Error: No link element found for chunk /_next/static/chunks/%5Broot-of-the-server%5D__a3dce129._.css
+[00:07:18.958] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:07:19.659] Browser ERROR   uncaughtError: ReferenceError: date is not defined
+[00:07:52.296] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:07:52.297] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./src/app/admin/reception/page.jsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:07:52.297] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:07:52.311] Server  LOG     ✓ Compiled in 45ms
+[00:07:52.629] Server  ERROR   ⨯ ReferenceError: date is not defined
+[00:07:52.890] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:07:53.659] Browser ERROR   uncaughtError: ReferenceError: date is not defined
+[00:08:11.342] Server  ERROR   ⨯ ReferenceError: date is not defined
+[00:08:11.603] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:11.732] Browser ERROR   uncaughtError: ReferenceError: date is not defined
+[00:10:09.937] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:10:09.937] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./src/app/admin/reception/page.jsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:10:09.938] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:10:10.334] Server  ERROR   ⨯ ReferenceError: date is not defined
+[00:10:10.357] Server  LOG     ✓ Compiled in 26ms
+[00:10:10.594] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:11.659] Browser ERROR   uncaughtError: ReferenceError: date is not defined
+[00:10:13.419] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:10:13.420] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./src/app/admin/reception/page.jsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:10:13.420] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:10:13.787] Server  ERROR   ⨯ ReferenceError: date is not defined
+[00:10:13.803] Server  LOG     ✓ Compiled in 66ms
+[00:10:14.044] Server  ERROR   ⨯ ReferenceError: date is not defined
+[00:10:14.251] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:14.660] Browser ERROR   uncaughtError: ReferenceError: date is not defined
+[00:10:22.798] Server  ERROR   ⨯ ReferenceError: date is not defined
+[00:10:23.022] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:23.147] Browser ERROR   uncaughtError: ReferenceError: date is not defined
+[00:11:28.590] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:11:28.590] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./src/app/admin/reception/page.jsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:11:28.591] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:11:28.997] Server  ERROR   ⨯ ReferenceError: date is not defined
+[00:11:29.013] Server  LOG     ✓ Compiled in 47ms
+[00:11:29.242] Server  ERROR   ⨯ ReferenceError: date is not defined
+[00:11:29.506] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:29.847] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:11:29.847] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./src/app/admin/reception/page.jsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:11:29.847] Browser ERROR   uncaughtError: ReferenceError: date is not defined
+[00:11:29.849] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:11:30.201] Server  ERROR   ⨯ ReferenceError: date is not defined
+[00:11:30.216] Server  LOG     ✓ Compiled in 23ms
+[00:11:30.427] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:30.659] Browser ERROR   uncaughtError: ReferenceError: date is not defined
+[00:11:31.239] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:11:31.240] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./src/app/admin/reception/page.jsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:11:31.240] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:11:31.595] Server  ERROR   ⨯ ReferenceError: date is not defined
+[00:11:31.609] Server  LOG     ✓ Compiled in 24ms
+[00:11:31.815] Server  ERROR   ⨯ ReferenceError: date is not defined
+[00:11:32.035] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:32.652] Browser ERROR   uncaughtError: ReferenceError: date is not defined
+[00:11:44.886] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:11:44.886] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./src/app/admin/reception/page.jsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:11:44.886] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:11:45.209] Server  ERROR   ⨯ ReferenceError: date is not defined
+[00:11:45.223] Server  LOG     ✓ Compiled in 50ms
+[00:11:45.625] Server  ERROR   ⨯ ReferenceError: date is not defined
+[00:11:45.859] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:46.614] Browser ERROR   uncaughtError: ReferenceError: date is not defined
+[00:12:43.977] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:12:43.977] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./src/components/occupancy/SeatGrid.jsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:12:43.977] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:12:44.162] Server  LOG     ✓ Compiled in 29ms
+[00:12:44.372] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:13:19.939] Server  LOG     ✓ Compiled in 39ms
+[00:13:22.048] Server  LOG     ✓ Compiled in 21ms
+[00:13:23.338] Server  LOG     ✓ Compiled in 30ms
+[00:14:03.710] Server  LOG     ✓ Compiled in 31ms
+[00:14:04.958] Server  LOG     ✓ Compiled in 29ms
+[00:16:51.160] Server  LOG     ✓ Compiled in 25ms
+[00:17:48.376] Server  LOG     ✓ Compiled in 35ms
+[00:17:51.199] Server  LOG     ✓ Compiled in 28ms
+[00:18:18.609] Server  LOG     ✓ Compiled in 22ms
+[00:18:37.557] Server  LOG     ✓ Compiled in 33ms
+[00:19:00.817] Server  LOG     ✓ Compiled in 46ms
+[00:19:03.286] Server  LOG     ✓ Compiled in 26ms
+[00:19:06.576] Server  LOG     ✓ Compiled in 21ms
+[00:21:28.629] Server  LOG     ✓ Compiled in 120ms
+[00:21:57.973] Server  LOG     ✓ Compiled in 26ms
+[00:22:41.623] Server  LOG     ✓ Compiled in 33ms
+[00:22:55.060] Server  LOG     ✓ Compiled in 25ms
+[00:23:41.518] Server  LOG     ✓ Compiled in 33ms
+[00:23:41.654] Browser ERROR   ./src/app/admin/reception/page.jsx:24:8
+Parsing ecmascript source code failed
+  22 |
+  23 |
+> 24 | cconst filteredSeats = seats
+     |        ^^^^^^^^^^^^^
+  25 |   .filter(seat =>
+  26 |     seatType === 'all' ? true : seat.type === seatType
+  27 |   )
+
+Expected ';', '}' or <eof>
+
+Import traces:
+  Client Component Browser:
+    ./src/app/admin/reception/page.jsx [Client Component Browser]
+    ./src/app/admin/reception/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/admin/reception/page.jsx [Client Component SSR]
+    ./src/app/admin/reception/page.jsx [Server Component]
+[00:23:51.925] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:24:43.694] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:24:45.287] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:25:03.470] Server  ERROR   ⨯ Error: The default export is not a React Component in "/admin/reception/page"
+[00:25:03.701] Server  ERROR   ⨯ Error: The default export is not a React Component in "/admin/reception/page"
+[00:25:03.927] Server  ERROR   ⨯ Error: The default export is not a React Component in "/admin/reception/page"
+[00:25:04.121] Server  ERROR   ⨯ Error: The default export is not a React Component in "/admin/reception/page"
+[00:25:04.546] Browser ERROR   uncaughtError: Error: The default export is not a React Component in "/admin/reception/page"
+[00:25:06.876] Server  LOG     ✓ Compiled in 30ms
+[00:25:28.057] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:26:18.522] Server  LOG     ✓ Compiled in 43ms
+[00:26:29.001] Server  LOG     ✓ Compiled in 22ms
+[00:26:45.968] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:26:57.594] Server  LOG     ✓ Compiled in 22ms
+[00:27:00.114] Server  LOG     ✓ Compiled in 46ms
+[00:27:01.327] Server  LOG     ✓ Compiled in 27ms
+[00:27:08.062] Server  LOG     ✓ Compiled in 34ms
+[00:27:10.491] Server  LOG     ✓ Compiled in 25ms
+[00:27:12.138] Server  LOG     ✓ Compiled in 34ms
+[00:27:15.611] Server  LOG     ✓ Compiled in 27ms
+[00:27:16.917] Server  LOG     ✓ Compiled in 40ms
+[00:27:42.499] Server  LOG     ✓ Compiled in 26ms
+[00:29:46.553] Server  LOG     ✓ Compiled in 37ms
+[00:29:48.031] Server  LOG     ✓ Compiled in 23ms
+[00:29:49.361] Server  LOG     ✓ Compiled in 24ms
+[00:30:24.693] Server  LOG     ✓ Compiled in 39ms
+[00:30:25.659] Browser ERROR   ./src/app/admin/reception/page.jsx:21:8
+Ecmascript file had an error
+  19 | );
+  20 | const [slot, setSlot] = useState('morning');
+> 21 | const [date, setDate] = useState(
+     |        ^^^^
+  22 |   new Date().toISOString().split('T')[0]
+  23 | );
+  24 | const [mode, setMode] = useState('morning'); // morning | evening | full-day | hourly
+
+the name `date` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./src/app/admin/reception/page.jsx [Client Component Browser]
+    ./src/app/admin/reception/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/admin/reception/page.jsx [Client Component SSR]
+    ./src/app/admin/reception/page.jsx [Server Component]
+[00:30:25.659] Browser ERROR   ./src/app/admin/reception/page.jsx:25:8
+Ecmascript file had an error
+  23 | );
+  24 | const [mode, setMode] = useState('morning'); // morning | evening | full-day | hourly
+> 25 | const [selectedSeat, setSelectedSeat] = useState(null);
+     |        ^^^^^^^^^^^^
+  26 |
+  27 |
+  28 |
+
+the name `selectedSeat` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./src/app/admin/reception/page.jsx [Client Component Browser]
+    ./src/app/admin/reception/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/admin/reception/page.jsx [Client Component SSR]
+    ./src/app/admin/reception/page.jsx [Server Component]
+[00:30:25.659] Browser ERROR   ./src/app/admin/reception/page.jsx:21:14
+Ecmascript file had an error
+  19 | );
+  20 | const [slot, setSlot] = useState('morning');
+> 21 | const [date, setDate] = useState(
+     |              ^^^^^^^
+  22 |   new Date().toISOString().split('T')[0]
+  23 | );
+  24 | const [mode, setMode] = useState('morning'); // morning | evening | full-day | hourly
+
+the name `setDate` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./src/app/admin/reception/page.jsx [Client Component Browser]
+    ./src/app/admin/reception/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/admin/reception/page.jsx [Client Component SSR]
+    ./src/app/admin/reception/page.jsx [Server Component]
+[00:30:25.659] Browser ERROR   ./src/app/admin/reception/page.jsx:25:22
+Ecmascript file had an error
+  23 | );
+  24 | const [mode, setMode] = useState('morning'); // morning | evening | full-day | hourly
+> 25 | const [selectedSeat, setSelectedSeat] = useState(null);
+     |                      ^^^^^^^^^^^^^^^
+  26 |
+  27 |
+  28 |
+
+the name `setSelectedSeat` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./src/app/admin/reception/page.jsx [Client Component Browser]
+    ./src/app/admin/reception/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/admin/reception/page.jsx [Client Component SSR]
+    ./src/app/admin/reception/page.jsx [Server Component]
+[00:30:42.688] Server  LOG     ✓ Compiled in 35ms
+[00:30:54.538] Server  LOG     ✓ Compiled in 31ms
+[00:31:21.762] Server  LOG     ✓ Compiled in 33ms
+[00:31:31.106] Server  LOG     ✓ Compiled in 26ms
+[00:31:31.656] Browser ERROR   ./src/app/admin/reception/page.jsx:57:9
+Parsing ecmascript source code failed
+  55 |         {/* ✅ FILTER BAR GOES HERE */}
+  56 |         <FilterBar
+> 57 |         ={date}
+     |         ^
+  58 |         setDate={setDate}
+  59 |         modedate={mode}
+  60 |         setMode={setMode}
+
+Expected '</', got '='
+
+Import traces:
+  Client Component Browser:
+    ./src/app/admin/reception/page.jsx [Client Component Browser]
+    ./src/app/admin/reception/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/admin/reception/page.jsx [Client Component SSR]
+    ./src/app/admin/reception/page.jsx [Server Component]
+[00:32:04.995] Server  LOG     ✓ Compiled in 27ms
+[00:33:16.541] Server  LOG     ✓ Compiled in 25ms
+[00:33:22.836] Server  LOG     ✓ Compiled in 24ms
+[00:33:27.915] Server  LOG     ✓ Compiled in 39ms
+[00:36:22.380] Server  LOG     ✓ Compiled in 55ms
+[00:36:57.041] Server  LOG     ✓ Compiled in 49ms
+[00:37:17.189] Server  LOG     ✓ Compiled in 51ms
+[00:37:30.456] Server  LOG     ✓ Compiled in 66ms
+[00:38:10.931] Server  LOG     ✓ Compiled in 27ms
+[00:38:14.466] Server  LOG     ✓ Compiled in 25ms
+[00:38:30.837] Browser LOG     Pod: Pod 1 Slot: 11:00 - 12:00
+[00:38:32.697] Browser LOG     Pod: Pod 2 Slot: 11:00 - 12:00
+[00:38:33.397] Browser LOG     Pod: Pod 2 Slot: 12:00 - 13:00
+[00:38:34.193] Browser LOG     Pod: Pod 2 Slot: 10:00 - 11:00
