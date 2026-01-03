@@ -1,14 +1,17 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useAuth } from "@/hooks/useAuth";
 
 export default function Navbar() {
   const { user, logout } = useAuth();
+  const pathname = usePathname();
 
   return (
     <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur border-b">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        
         {/* Logo */}
         <Link
           href="/"
@@ -17,77 +20,78 @@ export default function Navbar() {
           CoWork
         </Link>
 
-        {/* Links */}
-        <div className="flex items-center gap-6 text-sm font-medium text-gray-700">
-          {/* Always visible (public) */}
-          <NavLink href="/pricing">Pricing</NavLink>
-          <NavLink href="/availability">Availability</NavLink>
-          <NavLink href="/contact">Contact</NavLink>
+        {/* Main Links */}
+        <div className="flex items-center gap-6 text-sm font-medium">
 
-          {/* Not logged in */}
-          {!user && (
-            <Link
-              href="/login"
-              className="px-4 py-2 rounded-lg border border-blue-200 text-blue-600 hover:bg-blue-50 transition"
-            >
-              Login
-            </Link>
-          )}
+          {/* PUBLIC */}
+          <NavLink href="/pricing" pathname={pathname}>Pricing</NavLink>
+          <NavLink href="/availability" pathname={pathname}>Availability</NavLink>
+          <NavLink href="/contact" pathname={pathname}>Contact</NavLink>
+
+          {/* NOT LOGGED IN */}
+          {/* PUBLIC */}
+            {/* {(!user || user?.role === "USER") && (
+              <>
+                <NavLink href="/pricing" pathname={pathname}>
+                  Pricing
+                </NavLink>
+
+                <NavLink href="/availability" pathname={pathname}>
+                  Availability
+                </NavLink>
+
+                <NavLink href="/contact" pathname={pathname}>
+                  Contact
+                </NavLink>
+              </>
+            )} */}
+
 
           {/* USER */}
           {user?.role === "USER" && (
             <>
-              <Link
-                href="/user/dashboard"
-                className="px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition"
-              >
+              <NavButton href="/user/dashboard" pathname={pathname}>
                 Dashboard
-              </Link>
-
-              <button
-                onClick={logout}
-                className="text-gray-500 hover:text-red-500 transition"
-              >
-                Logout
-              </button>
+              </NavButton>
+              <Logout onClick={logout} />
             </>
           )}
 
-          {/* ADMIN */}
+          {/* ADMIN (RECEPTION) */}
           {user?.role === "ADMIN" && (
             <>
-              <Link
+              <NavLink
                 href="/admin/reception"
-                className="px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition"
+                pathname={pathname}
               >
-                Reception
-              </Link>
+                Occupancy
+              </NavLink>
 
-              <button
-                onClick={logout}
-                className="text-gray-500 hover:text-red-500 transition"
+              <NavLink
+                href="/admin/reception/bookings"
+                pathname={pathname}
               >
-                Logout
-              </button>
+                Bookings
+              </NavLink>
+
+              <NavLink
+                href="/admin/reception/users"
+                pathname={pathname}
+              >
+                Users
+              </NavLink>
+
+              <Logout onClick={logout} />
             </>
           )}
 
           {/* OWNER */}
           {user?.role === "OWNER" && (
             <>
-              <Link
-                href="/owner/analytics"
-                className="px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition"
-              >
+              <NavButton href="/owner/analytics" pathname={pathname}>
                 Analytics
-              </Link>
-
-              <button
-                onClick={logout}
-                className="text-gray-500 hover:text-red-500 transition"
-              >
-                Logout
-              </button>
+              </NavButton>
+              <Logout onClick={logout} />
             </>
           )}
         </div>
@@ -96,14 +100,49 @@ export default function Navbar() {
   );
 }
 
-/* Reusable nav link */
-function NavLink({ href, children }) {
+/* ---------- Helpers ---------- */
+
+function NavLink({ href, pathname, children }) {
+  const isActive = pathname === href || pathname.startsWith(href + "/");
+
   return (
     <Link
       href={href}
-      className="hover:text-blue-600 transition-colors"
+      className={`transition ${
+        isActive
+          ? "text-blue-600 font-semibold"
+          : "text-gray-700 hover:text-blue-600"
+      }`}
     >
       {children}
     </Link>
+  );
+}
+
+function NavButton({ href, pathname, children }) {
+  const isActive = pathname.startsWith(href);
+
+  return (
+    <Link
+      href={href}
+      className={`px-4 py-2 rounded-lg transition ${
+        isActive
+          ? "bg-blue-600 text-white"
+          : "bg-blue-100 text-blue-700 hover:bg-blue-200"
+      }`}
+    >
+      {children}
+    </Link>
+  );
+}
+
+function Logout({ onClick }) {
+  return (
+    <button
+      onClick={onClick}
+      className="text-gray-500 hover:text-red-500 transition"
+    >
+      Logout
+    </button>
   );
 }

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "u1",
+    "name": "Demo User",
+    "email": "user@cowork.com",
+    "phone": "9990011223",
+    "status": "ACTIVE",
+    "totalBookings": 2
+  },
+  {
+    "id": "u2",
+    "name": "Rahul Sharma",
+    "email": "rahul@cowork.com",
+    "phone": "9876543210",
+    "status": "ACTIVE",
+    "totalBookings": 3
+  },
+  {
+    "id": "u3",
+    "name": "Anita Verma",
+    "email": "anita@cowork.com",
+    "phone": "9123456789",
+    "status": "BLOCKED",
+    "totalBookings": 1
+  }
+]

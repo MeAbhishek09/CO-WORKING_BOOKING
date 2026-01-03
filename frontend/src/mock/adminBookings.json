@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "user": "Abhishek",
+    "email": "user@cowork.com",
+    "resource": "Seat A3",
+    "type": "Seat",
+    "date": "2026-01-03",
+    "slot": "Full Day",
+    "status": "ACTIVE"
+  },
+  {
+    "id": 2,
+    "user": "Rahul",
+    "email": "rahul@gmail.com",
+    "resource": "Pod P1",
+    "type": "Pod",
+    "date": "2026-01-03",
+    "slot": "10:00 – 12:00",
+    "status": "RESERVED"
+  }
+]

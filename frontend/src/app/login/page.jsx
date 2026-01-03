@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import { useAuth } from "@/hooks/useAuth";
 import { mockUsers } from "@/mock/users";
@@ -51,6 +52,7 @@ export default function LoginPage() {
             </p>
           )}
 
+          {/* Email */}
           <label className="text-sm font-medium">Email</label>
           <input
             type="email"
@@ -60,6 +62,7 @@ export default function LoginPage() {
             placeholder="user@cowork.com"
           />
 
+          {/* Password */}
           <label className="text-sm font-medium">Password</label>
           <input
             type="password"
@@ -69,12 +72,25 @@ export default function LoginPage() {
             placeholder="••••••••"
           />
 
+          {/* Login Button */}
           <button
             onClick={handleLogin}
             className="w-full py-2 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition"
           >
             Login
           </button>
+
+          {/* Signup Link */}
+         <p className="text-sm text-center mt-4">
+            New here?{" "}
+            <span
+              onClick={() => router.push("/signup")}
+              className="text-blue-600 font-medium cursor-pointer"
+            >
+              Create an account
+            </span>
+          </p>
+
 
           {/* Demo credentials */}
           <div className="mt-6 text-xs text-gray-600 space-y-1">

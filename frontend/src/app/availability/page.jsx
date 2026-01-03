@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 import { useAuth } from '@/hooks/useAuth';
+import Navbar from '@/components/layout/Navbar';
 
 import SeatGrid from '@/components/occupancy/SeatGrid';
 import PodsGrid from '@/components/occupancy/PodsGrid';
@@ -12,7 +13,7 @@ import FilterBar from '@/components/occupancy/FilterBar';
 
 import { seats } from '@/mock/occupancy';
 
-export default function AdminDashboard() {
+export default function AvailabilityPage() {
   const router = useRouter();
   const { user } = useAuth();
 
@@ -20,8 +21,7 @@ export default function AdminDashboard() {
   const [date, setDate] = useState(
     new Date().toISOString().split('T')[0]
   );
-  const [slot, setSlot] = useState('morning');
-  const [mode, setMode] = useState('morning'); 
+  const [mode, setMode] = useState('morning');
   // morning | evening | full-day | hourly
 
   /* 🔐 LOGIN GUARD */
@@ -35,12 +35,10 @@ export default function AdminDashboard() {
 
   /* FILTER LOGIC */
   const filteredSeats = seats.map((seat) => {
-    // Hourly mode → seats blocked
     if (mode === 'hourly') {
       return { ...seat, status: 'occupied' };
     }
 
-    // Slot-based filtering
     if (mode !== 'full-day' && !seat.slots.includes(mode)) {
       return { ...seat, status: 'occupied' };
     }
@@ -49,63 +47,68 @@ export default function AdminDashboard() {
   });
 
   return (
-    
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 flex items-center justify-center px-6">
-      <div className="bg-white rounded-3xl shadow-xl p-10 w-full space-y-10">
+    <>
+      {/* ✅ NAVBAR */}
+      <Navbar />
 
-        {/* Title */}
-        <h1 className="text-3xl font-bold text-center text-gray-800">
-          Seat Occupancy
-        </h1>
+      {/* PAGE CONTENT */}
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 px-6 py-10">
+        <div className="bg-white rounded-3xl shadow-xl p-10 max-w-7xl mx-auto space-y-10">
 
-        {/* Legend */}
-        <div className="flex justify-center gap-10 text-sm">
-          <Legend color="bg-green-500" label="Available" />
-          <Legend color="bg-yellow-500" label="Reserved" />
-          <Legend color="bg-red-500" label="Occupied" />
+          {/* Title */}
+          <h1 className="text-3xl font-bold text-center text-gray-800">
+            Seat & Pod Availability
+          </h1>
+
+          {/* Legend */}
+          <div className="flex justify-center gap-10 text-sm">
+            <Legend color="bg-green-500" label="Available" />
+            <Legend color="bg-yellow-500" label="Reserved" />
+            <Legend color="bg-red-500" label="Occupied" />
+          </div>
+
+          {/* Filters */}
+          <FilterBar
+            date={date}
+            setDate={setDate}
+            mode={mode}
+            setMode={setMode}
+          />
+
+          <p className="text-center text-sm text-gray-600">
+            Showing availability for{' '}
+            <span className="font-semibold">{date}</span> ·{' '}
+            <span className="font-semibold capitalize">
+              {mode === 'hourly' ? 'Hourly Pods' : mode.replace('-', ' ')}
+            </span>
+          </p>
+
+          {/* Layout */}
+          {mode === 'hourly' ? (
+            <PodsGrid
+              onSlotClick={(pod, slot) =>
+                requireLogin(() =>
+                  console.log('Pod:', pod.name, 'Slot:', slot.time)
+                )
+              }
+            />
+          ) : (
+            <SeatGrid
+              seats={filteredSeats}
+              onSeatClick={(seat) =>
+                requireLogin(() => setSelectedSeat(seat))
+              }
+            />
+          )}
+
+          {/* Modal */}
+          <SeatActionModal
+            seat={selectedSeat}
+            onClose={() => setSelectedSeat(null)}
+          />
         </div>
-
-        {/* Filters */}
-        <FilterBar
-          date={date}
-          setDate={setDate}
-          mode={mode}
-          setMode={setMode}
-        />
-
-        <p className="text-center text-sm text-gray-600">
-          Showing availability for{' '}
-          <span className="font-semibold">{date}</span> ·{' '}
-          <span className="font-semibold capitalize">
-            {mode === 'hourly' ? 'Hourly Pods' : mode.replace('-', ' ')}
-          </span>
-        </p>
-
-        {/* Layout */}
-        {mode === 'hourly' ? (
-          <PodsGrid
-            onSlotClick={(pod, slot) =>
-              requireLogin(() =>
-                console.log('Pod:', pod.name, 'Slot:', slot.time)
-              )
-            }
-          />
-        ) : (
-          <SeatGrid
-            seats={filteredSeats}
-            onSeatClick={(seat) =>
-              requireLogin(() => setSelectedSeat(seat))
-            }
-          />
-        )}
-
-        {/* Modal */}
-        <SeatActionModal
-          seat={selectedSeat}
-          onClose={() => setSelectedSeat(null)}
-        />
       </div>
-    </div>
+    </>
   );
 }
 
