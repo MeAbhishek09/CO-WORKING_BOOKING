@@ -68,75 +68,73 @@ export function HeroSection() {
           </motion.div>
 
           {/* VISUAL */}
-    <motion.div
-  initial={{ opacity: 0, scale: 0.95 }}
-  animate={{ opacity: 1, scale: 1 }}
-  transition={{ duration: 0.6, delay: 0.2 }}
-  className="relative hidden lg:block"
->
-  {/* Main Preview */}
-  <div className="aspect-square rounded-3xl bg-gradient-to-br from-primary/20 to-accent/20 p-8">
-      <div className="w-full h-full rounded-2xl bg-card shadow-xl flex items-center justify-center overflow-hidden">
-        <div className="text-center space-y-4 p-8">
-          <div className="w-20 h-20 mx-auto rounded-2xl bg-primary/10 flex items-center justify-center">
-            <Calendar className="w-10 h-10 text-primary" />
-          </div>
-          <h3 className="text-2xl font-bold text-foreground">
-            Ready to Work?
-          </h3>
-          <p className="text-muted-foreground">
-            Book your perfect workspace today
-          </p>
-        </div>
-      </div>
-    </div>
+                <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="relative hidden lg:block"
+            >
+              {/* Main Preview */}
+              <div className="aspect-square rounded-3xl bg-gradient-to-br from-primary/20 to-accent/20 p-8">
+                  <div className="w-full h-full rounded-2xl bg-card shadow-xl flex items-center justify-center overflow-hidden">
+                    <div className="text-center space-y-4 p-8">
+                      <div className="w-20 h-20 mx-auto rounded-2xl bg-primary/10 flex items-center justify-center">
+                        <Calendar className="w-10 h-10 text-primary" />
+                      </div>
+                      <h3 className="text-2xl font-bold text-foreground">
+                        Ready to Work?
+                      </h3>
+                      <p className="text-muted-foreground">
+                        Book your perfect workspace today
+                      </p>
+                    </div>
+                  </div>
+                </div>
 
-<motion.div
-  animate={{ y: [0, -12, 0] }}
-  transition={{
-    duration: 4,
-    repeat: Infinity,
-    ease: "easeInOut",
-  }}
-  className="absolute -left-8 top-1/4 glass rounded-2xl p-4 shadow-xl"
->
-  <div className="flex items-center gap-3">
-    <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center">
-      <span className="text-2xl">🎯</span>
-    </div>
-    <div>
-      <p className="text-sm font-semibold">Focus Zones</p>
-      <p className="text-xs text-muted-foreground">Quiet workspaces</p>
-    </div>
-  </div>
-</motion.div>
-
-
-  {/* FLOATING: Meeting Pods */}
-  <motion.div
-  animate={{ y: [0, -14, 0] }}
-  transition={{
-    duration: 5,
-    repeat: Infinity,
-    ease: "easeInOut",
-    delay: 1,
-  }}
-  className="absolute -right-4 bottom-1/4 glass rounded-2xl p-4 shadow-xl"
->
-  <div className="flex items-center gap-3">
-    <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center">
-      <span className="text-2xl">👥</span>
-    </div>
-    <div>
-      <p className="text-sm font-semibold">Meeting Pods</p>
-      <p className="text-xs text-muted-foreground">Private rooms</p>
-    </div>
-  </div>
-</motion.div>
-
-</motion.div>
+            <motion.div
+              animate={{ y: [0, -12, 0] }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="absolute -left-8 top-1/4 glass rounded-2xl p-4 shadow-xl"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center">
+                  <span className="text-2xl">🎯</span>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold">Focus Zones</p>
+                  <p className="text-xs text-muted-foreground">Quiet workspaces</p>
+                </div>
+              </div>
+            </motion.div>
 
 
+              {/* FLOATING: Meeting Pods */}
+              <motion.div
+              animate={{ y: [0, -14, 0] }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 1,
+              }}
+              className="absolute -right-4 bottom-1/4 glass rounded-2xl p-4 shadow-xl"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center">
+                  <span className="text-2xl">👥</span>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold">Meeting Pods</p>
+                  <p className="text-xs text-muted-foreground">Private rooms</p>
+                </div>
+              </div>
+            </motion.div>
+
+            </motion.div>
 
         </div>
       </div>
