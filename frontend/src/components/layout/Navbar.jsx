@@ -13,8 +13,9 @@ export default function Navbar() {
   const pathname = usePathname();
   const { user, logout } = useAuth();
 
-  const isActive = (href) =>
-    pathname === href || pathname.startsWith(href + "/");
+  // const isActive = (href) =>
+  //   pathname === href || pathname.startsWith(href + "/");
+  const isActive = (href) => pathname === href;
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
