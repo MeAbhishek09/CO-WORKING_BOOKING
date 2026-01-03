@@ -4,8 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
+
 import { Button } from "@/components/ui/button";
 import {
   Calendar,
@@ -134,7 +133,7 @@ export default function Book() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
+     
 
       <main className="pt-32 pb-24">
         <div className="container mx-auto px-4 max-w-3xl">
@@ -324,7 +323,7 @@ export default function Book() {
         </div>
       </main>
 
-      <Footer />
+    
     </div>
   );
 }
