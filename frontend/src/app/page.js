@@ -12,7 +12,7 @@ import { CTABanner } from "@/components/layout/CTABanner";
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
+      {/* <Navbar /> */}
 
       <main className="space-y-24">
         <HeroSection />
@@ -24,7 +24,7 @@ export default function Home() {
         <CTABanner />
       </main>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

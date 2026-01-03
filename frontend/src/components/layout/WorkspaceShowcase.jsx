@@ -49,7 +49,7 @@ const itemVariants = {
 
 export function WorkspaceShowcase() {
   return (
-    <section className="py-24 bg-black">
+    <section className="py-24 bg-muted/30">
       <div className="container mx-auto px-4">
         {/* Heading */}
         <motion.div
