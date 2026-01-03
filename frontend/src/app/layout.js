@@ -4,7 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { Toaster } from "@/components/ui/toaster"; // ✅ REQUIRED
-
+import { AuthProvider } from "@/hooks/useAuth";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -23,18 +23,18 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
-      >
-        {/* Global Layout */}
-        <Navbar />
+      <body className="antialiased bg-background text-foreground">
+        {/*  AUTH PROVIDER MUST WRAP NAVBAR + PAGES */}
+        <AuthProvider>
+          <Navbar />
 
-        <main>{children}</main>
+          <main>{children}</main>
 
-        <Footer />
+          <Footer />
 
-        {/* ✅ Toasts must be LAST */}
-        <Toaster />
+          {/* Toasts LAST */}
+          <Toaster />
+        </AuthProvider>
       </body>
     </html>
   );

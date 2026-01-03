@@ -1,11 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
-export function useAuth() {
+const AuthContext = createContext(null);
+
+export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
 
-  // Load from storage on refresh
+  // Load from localStorage once
   useEffect(() => {
     const saved = localStorage.getItem("cowork_user");
     if (saved) {
@@ -24,5 +26,13 @@ export function useAuth() {
     window.location.href = "/login";
   };
 
-  return { user, login, logout };
+  return (
+    <AuthContext.Provider value={{ user, login, logout }}>
+      {children}
+    </AuthContext.Provider>
+  );
+}
+
+export function useAuth() {
+  return useContext(AuthContext);
 }
