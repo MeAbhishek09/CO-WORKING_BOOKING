@@ -16,7 +16,7 @@ export default function Home() {
 
       <main className="space-y-24">
         <HeroSection />
-        {/* <WorkspaceShowcase /> */}
+        <WorkspaceShowcase />
         <HowItWorks />
         <LiveAvailability />
         <PricingPreview />

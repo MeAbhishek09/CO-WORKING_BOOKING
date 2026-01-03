@@ -25,6 +25,10 @@
 
   --border: 40 15% 88%;
   --destructive: 0 84% 60%;
+
+  --card: 40 30% 100%;
+--card-foreground: 220 20% 15%;
+
 }
 
 /* ===============================
@@ -48,6 +52,10 @@
   --muted-foreground: 220 10% 65%;
 
   --border: 220 15% 20%;
+
+  --card: 220 25% 10%;
+--card-foreground: 40 20% 95%;
+
 }
 
 /* ===============================
@@ -71,6 +79,11 @@
 
   --color-border: hsl(var(--border));
   --color-destructive: hsl(var(--destructive));
+
+
+  --color-card: hsl(var(--card));
+--color-card-foreground: hsl(var(--card-foreground));
+
 }
 
 /* ===============================

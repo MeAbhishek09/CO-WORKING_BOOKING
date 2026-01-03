@@ -68,18 +68,21 @@ export function HeroSection() {
           </motion.div>
 
           {/* VISUAL */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="hidden lg:block"
-          >
-            <div className="aspect-square rounded-3xl bg-gradient-to-br from-primary/20 to-accent/20 p-8">
-              <div className="w-full h-full rounded-2xl bg-card shadow-large flex items-center justify-center">
-                <p className="text-muted-foreground">Workspace Preview</p>
-              </div>
-            </div>
-          </motion.div>
+     <motion.div
+  initial={{ opacity: 0, scale: 0.95 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.6, delay: 0.2 }}
+  className="hidden lg:block"
+>
+  <div className="aspect-square rounded-3xl bg-gradient-to-br from-primary/20 to-accent/20 p-8">
+    <div className="w-full h-full rounded-2xl bg-card shadow-xl flex items-center justify-center">
+      <p className="text-muted-foreground font-medium">
+        Workspace Preview
+      </p>
+    </div>
+  </div>
+</motion.div>
+
 
         </div>
       </div>
