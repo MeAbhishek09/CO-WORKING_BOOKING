@@ -23,29 +23,39 @@ export default function Navbar() {
         {/* Main Links */}
         <div className="flex items-center gap-6 text-sm font-medium">
 
-          {/* PUBLIC */}
-          <NavLink href="/pricing" pathname={pathname}>Pricing</NavLink>
-          <NavLink href="/availability" pathname={pathname}>Availability</NavLink>
-          <NavLink href="/contact" pathname={pathname}>Contact</NavLink>
+          {/* Pricing + Contact (PUBLIC + USER + ADMIN) */}
+          {(!user || user.role === "USER" || user.role === "ADMIN"  || user.role === "OWNER") && (
+            <>
+              <NavLink href="/pricing" pathname={pathname}>
+                Pricing
+              </NavLink>
+
+              <NavLink href="/contact" pathname={pathname}>
+                Contact
+              </NavLink>
+            </>
+          )}
+
+          {/* Availability (PUBLIC + USER only) */}
+          {(!user || user.role === "USER") && (
+            <NavLink href="/availability" pathname={pathname}>
+              Availability
+            </NavLink>
+          )}
 
           {/* NOT LOGGED IN */}
-          {/* PUBLIC */}
-            {/* {(!user || user?.role === "USER") && (
-              <>
-                <NavLink href="/pricing" pathname={pathname}>
-                  Pricing
-                </NavLink>
-
-                <NavLink href="/availability" pathname={pathname}>
-                  Availability
-                </NavLink>
-
-                <NavLink href="/contact" pathname={pathname}>
-                  Contact
-                </NavLink>
-              </>
-            )} */}
-
+          {!user && (
+            <Link
+              href="/login"
+              className={`px-4 py-2 rounded-lg border transition ${
+                pathname === "/login"
+                  ? "bg-blue-600 text-white border-blue-600"
+                  : "border-blue-200 text-blue-600 hover:bg-blue-50"
+              }`}
+            >
+              Login
+            </Link>
+          )}
 
           {/* USER */}
           {user?.role === "USER" && (
@@ -57,27 +67,18 @@ export default function Navbar() {
             </>
           )}
 
-          {/* ADMIN (RECEPTION) */}
+          {/* ADMIN */}
           {user?.role === "ADMIN" && (
             <>
-              <NavLink
-                href="/admin/reception"
-                pathname={pathname}
-              >
+              <NavLink href="/admin/reception" pathname={pathname}>
                 Occupancy
               </NavLink>
 
-              <NavLink
-                href="/admin/reception/bookings"
-                pathname={pathname}
-              >
+              <NavLink href="/admin/reception/bookings" pathname={pathname}>
                 Bookings
               </NavLink>
 
-              <NavLink
-                href="/admin/reception/users"
-                pathname={pathname}
-              >
+              <NavLink href="/admin/reception/users" pathname={pathname}>
                 Users
               </NavLink>
 
