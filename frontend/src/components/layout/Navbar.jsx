@@ -19,57 +19,6 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-<<<<<<< Updated upstream
-    <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center shadow-md transition-transform group-hover:scale-105">
-            <span className="text-white font-bold text-lg">C</span>
-          </div>
-          <span className="text-xl font-bold text-gray-900">
-            CoWork<span className="text-blue-600">Hub</span>
-          </span>
-        </Link>
-
-        {/* Links */}
-        <div className="flex items-center gap-2 text-sm font-medium">
-
-          {/* Pricing + Contact (PUBLIC + USER + ADMIN + OWNER) */}
-          {(!user ||
-            user.role === "USER" ||
-            user.role === "ADMIN" ||
-            user.role === "OWNER") && (
-            <>
-              <NavLink href="/pricing" pathname={pathname}>
-                Pricing
-              </NavLink>
-              <NavLink href="/contact" pathname={pathname}>
-                Contact
-              </NavLink>
-            </>
-          )}
-
-          {/* Availability (PUBLIC + USER) */}
-          {(!user || user.role === "USER") && (
-            <NavLink href="/availability" pathname={pathname}>
-              Availability
-            </NavLink>
-          )}
-
-          {/* Not Logged In */}
-          {!user && (
-            <Link
-              href="/login"
-              className={`ml-2 px-4 py-2 rounded-lg border transition ${
-                pathname === "/login"
-                  ? "bg-blue-600 text-white border-blue-600"
-                  : "border-blue-200 text-blue-600 hover:bg-blue-50"
-              }`}
-            >
-              Log in
-=======
     <header className="fixed top-0 left-0 right-0 z-50">
       <div className="mx-4 mt-4">
         <nav className="glass rounded-2xl px-6 py-4 shadow-medium backdrop-blur">
@@ -82,7 +31,6 @@ export default function Navbar() {
               <span className="text-xl font-bold text-foreground">
                 Workspace<span className="text-primary">Hub</span>
               </span>
->>>>>>> Stashed changes
             </Link>
 
             {/* Desktop Navigation */}
@@ -92,29 +40,6 @@ export default function Navbar() {
                   pathname === link.href ||
                   pathname.startsWith(link.href + "/");
 
-<<<<<<< Updated upstream
-          {/* ADMIN */}
-          {user?.role === "ADMIN" && (
-            <>
-              <NavLink href="/admin/reception" pathname={pathname}>
-                Occupancy
-              </NavLink>
-              <NavLink
-                href="/admin/reception/bookings"
-                pathname={pathname}
-              >
-                Bookings
-              </NavLink>
-              <NavLink
-                href="/admin/reception/users"
-                pathname={pathname}
-              >
-                Users
-              </NavLink>
-              <Logout onClick={logout} />
-            </>
-          )}
-=======
                 return (
                   <Link
                     key={link.name}
@@ -168,7 +93,6 @@ export default function Navbar() {
                     const isActive =
                       pathname === link.href ||
                       pathname.startsWith(link.href + "/");
->>>>>>> Stashed changes
 
                     return (
                       <Link
@@ -200,57 +124,6 @@ export default function Navbar() {
           </AnimatePresence>
         </nav>
       </div>
-<<<<<<< Updated upstream
-    </nav>
-  );
-}
-
-/* ---------- UI Helpers (same logic) ---------- */
-
-function NavLink({ href, pathname, children }) {
-  const isActive = pathname === href || pathname.startsWith(href + "/");
-
-  return (
-    <Link
-      href={href}
-      className={`px-4 py-2 rounded-lg transition-all duration-300 ${
-        isActive
-          ? "text-blue-600 bg-blue-50"
-          : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
-      }`}
-    >
-      {children}
-    </Link>
-  );
-}
-
-function NavButton({ href, pathname, children }) {
-  const isActive = pathname.startsWith(href);
-
-  return (
-    <Link
-      href={href}
-      className={`ml-1 px-4 py-2 rounded-lg transition-all duration-300 ${
-        isActive
-          ? "bg-blue-600 text-white"
-          : "bg-blue-100 text-blue-700 hover:bg-blue-200"
-      }`}
-    >
-      {children}
-    </Link>
-  );
-}
-
-function Logout({ onClick }) {
-  return (
-    <button
-      onClick={onClick}
-      className="ml-2 px-4 py-2 rounded-lg text-red-600 hover:bg-red-50 transition-all duration-300"
-    >
-      Logout
-    </button>
-=======
     </header>
->>>>>>> Stashed changes
   );
 }
