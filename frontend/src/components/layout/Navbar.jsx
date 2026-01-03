@@ -9,51 +9,55 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur border-b">
+    <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        
+
         {/* Logo */}
-        <Link
-          href="/"
-          className="text-xl font-semibold text-blue-600 tracking-tight"
-        >
-          CoWork
+        <Link href="/" className="flex items-center gap-2 group">
+          <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center shadow-md transition-transform group-hover:scale-105">
+            <span className="text-white font-bold text-lg">C</span>
+          </div>
+          <span className="text-xl font-bold text-gray-900">
+            CoWork<span className="text-blue-600">Hub</span>
+          </span>
         </Link>
 
-        {/* Main Links */}
-        <div className="flex items-center gap-6 text-sm font-medium">
+        {/* Links */}
+        <div className="flex items-center gap-2 text-sm font-medium">
 
-          {/* Pricing + Contact (PUBLIC + USER + ADMIN) */}
-          {(!user || user.role === "USER" || user.role === "ADMIN"  || user.role === "OWNER") && (
+          {/* Pricing + Contact (PUBLIC + USER + ADMIN + OWNER) */}
+          {(!user ||
+            user.role === "USER" ||
+            user.role === "ADMIN" ||
+            user.role === "OWNER") && (
             <>
               <NavLink href="/pricing" pathname={pathname}>
                 Pricing
               </NavLink>
-
               <NavLink href="/contact" pathname={pathname}>
                 Contact
               </NavLink>
             </>
           )}
 
-          {/* Availability (PUBLIC + USER only) */}
+          {/* Availability (PUBLIC + USER) */}
           {(!user || user.role === "USER") && (
             <NavLink href="/availability" pathname={pathname}>
               Availability
             </NavLink>
           )}
 
-          {/* NOT LOGGED IN */}
+          {/* Not Logged In */}
           {!user && (
             <Link
               href="/login"
-              className={`px-4 py-2 rounded-lg border transition ${
+              className={`ml-2 px-4 py-2 rounded-lg border transition ${
                 pathname === "/login"
                   ? "bg-blue-600 text-white border-blue-600"
                   : "border-blue-200 text-blue-600 hover:bg-blue-50"
               }`}
             >
-              Login
+              Log in
             </Link>
           )}
 
@@ -73,15 +77,18 @@ export default function Navbar() {
               <NavLink href="/admin/reception" pathname={pathname}>
                 Occupancy
               </NavLink>
-
-              <NavLink href="/admin/reception/bookings" pathname={pathname}>
+              <NavLink
+                href="/admin/reception/bookings"
+                pathname={pathname}
+              >
                 Bookings
               </NavLink>
-
-              <NavLink href="/admin/reception/users" pathname={pathname}>
+              <NavLink
+                href="/admin/reception/users"
+                pathname={pathname}
+              >
                 Users
               </NavLink>
-
               <Logout onClick={logout} />
             </>
           )}
@@ -101,7 +108,7 @@ export default function Navbar() {
   );
 }
 
-/* ---------- Helpers ---------- */
+/* ---------- UI Helpers (same logic) ---------- */
 
 function NavLink({ href, pathname, children }) {
   const isActive = pathname === href || pathname.startsWith(href + "/");
@@ -109,10 +116,10 @@ function NavLink({ href, pathname, children }) {
   return (
     <Link
       href={href}
-      className={`transition ${
+      className={`px-4 py-2 rounded-lg transition-all duration-300 ${
         isActive
-          ? "text-blue-600 font-semibold"
-          : "text-gray-700 hover:text-blue-600"
+          ? "text-blue-600 bg-blue-50"
+          : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
       }`}
     >
       {children}
@@ -126,7 +133,7 @@ function NavButton({ href, pathname, children }) {
   return (
     <Link
       href={href}
-      className={`px-4 py-2 rounded-lg transition ${
+      className={`ml-1 px-4 py-2 rounded-lg transition-all duration-300 ${
         isActive
           ? "bg-blue-600 text-white"
           : "bg-blue-100 text-blue-700 hover:bg-blue-200"
@@ -141,7 +148,7 @@ function Logout({ onClick }) {
   return (
     <button
       onClick={onClick}
-      className="text-gray-500 hover:text-red-500 transition"
+      className="ml-2 px-4 py-2 rounded-lg text-red-600 hover:bg-red-50 transition-all duration-300"
     >
       Logout
     </button>
