@@ -112,3 +112,34 @@ body {
 .animate-scaleIn {
   animation: scaleIn 0.15s ease-out;
 }
+
+
+
+/* ===============================
+   FLOATING ANIMATION
+================================ */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* ===============================
+   GLASS CARD STYLE
+================================ */
+.glass {
+  background: hsl(var(--background) / 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid hsl(var(--border));
+}
